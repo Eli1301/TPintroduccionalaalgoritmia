@@ -27,7 +27,8 @@ def menuLogin(listaUsuarios, listaContrasenias): # Validar usuario, Crear usuari
             ingreso = validarUsuario(listaUsuarios, listaContrasenias)
             if ingreso == True:
                 ingresoSistema = True
-                print("===============Has ingresado al sistema=================")
+                print("")
+                print("BIENVENIDO, YA ESTA LOGEADO, MARCA 0(cero) PARA SEGUIR AL SIGUIENTE MENU")
             else:
                 print("========ERROR - CREDENCIALES INVALIDAS=======")
             
@@ -82,3 +83,13 @@ def registrarUsuario(listaUsuarios, listaContrasenias): #REGISTRO DE USUARIO
         
 #=================Programa Principal=====================
 usuario = menuLogin(listaUsuarios, listaContrasenias)
+
+if usuario == True:
+    print("===============Has ingresado al sistema=================")
+elif usuario == False:
+    print("INICIE SESION CON SU USUARIO PARA INGRESAR")
+else:
+    usuario = menuLogin(listaUsuarios, listaContrasenias)
+
+
+
