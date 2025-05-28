@@ -1,6 +1,11 @@
 listaUsuarios = ["Elian", "Mesu"]
 listaContrasenias = ["pipo", "tero"]
 
+listaTareas = ["Revisar correos","Planificar proyecto","Escribir informe","Reunión de equipo","Llamar a cliente"]
+listaPrioridad = [1,2,3,4,5]
+listaTiempoEstimado = [30,45,60,90,120]
+listaUsuarioAsignado = ["Elian", "Mesu"]
+
 def menuLogin(listaUsuarios, listaContrasenias): # Validar usuario, Crear usuario o salir del sistema
     ingresoSistema = False # Creamos una flag para saber si el usuario ingresa o no al sistema
     
