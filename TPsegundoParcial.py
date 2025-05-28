@@ -7,7 +7,7 @@ listaTiempoEstimado = [30,45,60,90,120] # En minutos
 listaUsuarioAsignado = ["Elian", "Mesu"] 
 
 def menuLogin(listaUsuarios, listaContrasenias): # Validar usuario, Crear usuario o salir del sistema
-    ingresoSistema = False # Creamos una flag para saber si el usuario ingresa o no al sistema
+    ingresoSistema = 2 # Creamos una flag para saber si el usuario ingresa o no al sistema
     
     print("=========Menu Login=========")
     print("ingrese el numero correspondiente a la accion que quiera realizar")
@@ -26,7 +26,7 @@ def menuLogin(listaUsuarios, listaContrasenias): # Validar usuario, Crear usuari
             # Ingresa a funcion Validar Usuario
             ingreso = validarUsuario(listaUsuarios, listaContrasenias)
             if ingreso == True:
-                ingresoSistema = True
+                ingresoSistema = 1
                 print("")
                 print("BIENVENIDO, YA ESTA LOGEADO, MARCA 0(cero) PARA SEGUIR AL SIGUIENTE MENU")
             else:
@@ -84,12 +84,14 @@ def registrarUsuario(listaUsuarios, listaContrasenias): #REGISTRO DE USUARIO
 #=================Programa Principal=====================
 usuario = menuLogin(listaUsuarios, listaContrasenias)
 
-if usuario == True:
-    print("===============Has ingresado al sistema=================")
-elif usuario == False:
-    print("INICIE SESION CON SU USUARIO PARA INGRESAR")
-else:
-    usuario = menuLogin(listaUsuarios, listaContrasenias)
+while usuario > 0 and usuario <= 2: # Selecciona segun el valor de usuario a donde tiene que ir
+    if usuario == 1: # Ingresa al sistema
+        print("===============Has ingresado al sistema=================")
+    elif usuario == 2: # Intenta ingresar al sistema pero no ah iniciado sesion
+        print("INICIE SESION CON SU USUARIO PARA INGRESAR")
+        usuario = menuLogin(listaUsuarios, listaContrasenias)
+    else: 
+        usuario = menuLogin(listaUsuarios, listaContrasenias)
 
 
 
